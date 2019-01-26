@@ -6,10 +6,12 @@ using UnityEditor.SceneManagement;
 
 public class Exchange : MonoBehaviour
 {
+    ControllerResources ctrlResources;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ctrlResources = gameObject.transform.GetComponentInParent<ControllerResources>();
     }
 
     // Update is called once per frame
@@ -18,33 +20,12 @@ public class Exchange : MonoBehaviour
         
     }
 
-    //if bee false: bee = worker else: bee = soldier
-    public void openPanelExchange(bool bee){
-        gameObject.SetActive(true);
-        if (bee){
-            gameObject.GetComponent<Image>().color = new Color(1, 0.92f, 0.016f, 0.5f);
-            gameObject.transform.Find("iBeeWorker").gameObject.SetActive(true);
-            gameObject.transform.Find("iBeeSoldier").gameObject.SetActive(false);
-            gameObject.transform.Find("btnPurchase").Find("iPurchaseWorker").gameObject.SetActive(true);
-            gameObject.transform.Find("btnPurchase").Find("iPurchaseSoldier").gameObject.SetActive(false);
+    public void buyWorker() {
 
-        }
-        else {
-            gameObject.GetComponent<Image>().color = new Color(1, 0, 0, 0.5f);
-            gameObject.transform.Find("iBeeWorker").gameObject.SetActive(false);
-            gameObject.transform.Find("iBeeSoldier").gameObject.SetActive(true);
-            gameObject.transform.Find("btnPurchase").Find("iPurchaseWorker").gameObject.SetActive(false);
-            gameObject.transform.Find("btnPurchase").Find("iPurchaseSoldier").gameObject.SetActive(true);
-
-        }
-        
     }
 
-    public void ClosePanelExchange() {
-        gameObject.SetActive(false);
+    public void buySoldier() {
+
     }
 
-    public void startMission(int level) {
-        EditorSceneManager.LoadScene(level);
-    }
 }

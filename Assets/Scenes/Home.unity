@@ -595,7 +595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 
 --- !u!222 &715047784
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1856822491}
+      - m_Target: {fileID: 940873225}
         m_MethodName: ClosePanelExchange
         m_Mode: 1
         m_Arguments:
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1856822491}
+      - m_Target: {fileID: 940873225}
         m_MethodName: openPanelExchange
         m_Mode: 6
         m_Arguments:
@@ -1374,6 +1374,7 @@ GameObject:
   - component: {fileID: 940873223}
   - component: {fileID: 940873222}
   - component: {fileID: 940873221}
+  - component: {fileID: 940873225}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1471,6 +1472,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &940873225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940873220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6f44a94c7b00644b175063f650cff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtNectares: {fileID: 715047783}
+  txtBeeWorkers: {fileID: 1599594502}
+  txtBeeSoldiers: {fileID: 948112209}
+  panelPurchase: {fileID: 1856822489}
 --- !u!1 &944433132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,7 +1640,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: '
+
+'
 --- !u!222 &948112210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1838,7 +1857,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1856822491}
+      - m_Target: {fileID: 940873225}
         m_MethodName: openPanelExchange
         m_Mode: 6
         m_Arguments:
@@ -2313,7 +2332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1856822491}
+      - m_Target: {fileID: 940873225}
         m_MethodName: startMission
         m_Mode: 3
         m_Arguments:
@@ -2502,7 +2521,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: 
 --- !u!222 &1599594503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2833,7 +2852,6 @@ GameObject:
   - component: {fileID: 1856822490}
   - component: {fileID: 1856822493}
   - component: {fileID: 1856822492}
-  - component: {fileID: 1856822491}
   m_Layer: 5
   m_Name: panelExchange
   m_TagString: Untagged
@@ -2864,18 +2882,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.0440063, y: -0.3000183}
   m_SizeDelta: {x: -2.5370007, y: -0.5999999}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1856822491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856822489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e5e5a9f59ed0b4eae7a10c071831e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1856822492
 MonoBehaviour:
   m_ObjectHideFlags: 0
