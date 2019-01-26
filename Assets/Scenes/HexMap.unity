@@ -232,8 +232,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
-  orthographic size: 5
+  orthographic: 0
+  orthographic size: 10.28
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -294,7 +294,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeX: 10
   sizeY: 10
-  hexObject: {fileID: 100002, guid: 3dc93c386060ad0479facccb12a864a2, type: 3}
+  hexEmpty: {fileID: 4679286350338679474, guid: c67cd6953e7604a41a114863b6d64157,
+    type: 3}
+  hexFull: {fileID: 4679286350338679474, guid: e049ddb6df8edbf42a8f480f886cd3a3, type: 3}
+  hexSelected: {fileID: 4679286350338679474, guid: 3df2b6966a549c543976803574e81e62,
+    type: 3}
+  hexSelectble: {fileID: 986959519161776178, guid: 21df69afd0520f54ea9581ab93eec5ab,
+    type: 3}
+  blank: {fileID: 1803601667093834434, guid: 2ccdd429d03f4024f8b8981ab78508ed, type: 3}
 --- !u!4 &482478285
 Transform:
   m_ObjectHideFlags: 0
