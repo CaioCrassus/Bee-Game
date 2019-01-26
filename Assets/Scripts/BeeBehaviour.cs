@@ -8,10 +8,12 @@ public class BeeBehaviour : MonoBehaviour
 
     public float moveDirection;
     private bool moving = false;
-    private float speed = 100f;
+    public float speed = 100f;
 
     public float jumpForce;
     public float atackForce;
+
+    public int bees = 0;
 
     void Start()
     {
