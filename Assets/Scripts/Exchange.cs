@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.SceneManagement;
 
 public class Exchange : MonoBehaviour
 {
@@ -41,5 +42,9 @@ public class Exchange : MonoBehaviour
 
     public void ClosePanelExchange() {
         gameObject.SetActive(false);
+    }
+
+    public void startMission(int level) {
+        EditorSceneManager.LoadScene(level);
     }
 }
