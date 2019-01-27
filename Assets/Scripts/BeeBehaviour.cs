@@ -19,7 +19,7 @@ public class BeeBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        bee = gameObject;
+        bee = GameObject.FindGameObjectWithTag("bee") ;
     }
 
     void FixedUpdate()
@@ -28,24 +28,24 @@ public class BeeBehaviour : MonoBehaviour
 
         if (moveDirection < 0)
         {
-            bee.transform.eulerAngles = new Vector3 (-90f, 180f, 0f);
+            bee.transform.eulerAngles = new Vector3 (0f, 180f, 0f);
         }
-
         else
         {
-            bee.transform.eulerAngles = new Vector3(-90f, 0f, 0f);
+            bee.transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
-        rb.AddForce(transform.up * moveDirection);
+
+        rb.AddForce(transform.forward * moveDirection);
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector3(0, jumpForce, moveDirection);
+            rb.velocity = new Vector3(0, jumpForce, 0);
             moving = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector3(0, atackForce, moveDirection);
+            rb.velocity = new Vector3(0, atackForce, 0);
             moving = true;
         }
     }
