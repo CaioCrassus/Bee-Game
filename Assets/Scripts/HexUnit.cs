@@ -14,7 +14,7 @@ public class HexUnit : MonoBehaviour
     void OnMouseOver(){
         if (click){
             if(true){// && mapRef.GetHexUnitState(gridPos) == state.selectble){//Buy hex function - resource manager returnd true
-                Debug.Log("Over");
+                //Debug.Log("Over");
                 mapRef.ChangeHexState(gridPos, state.empty);
                 mapRef.updateMap();
             }
