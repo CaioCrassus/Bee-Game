@@ -18,7 +18,7 @@ public class HexMap : MonoBehaviour
     private float inneradius = 0.85f;
     private float outerradius = 1;
 
-    Dictionary<Vector2, Hex> map = new Dictionary<Vector2,Hex>();
+    static Dictionary<Vector2, Hex> map = new Dictionary<Vector2,Hex>();
 
     public int emptyCount{get; private set;}
     public int fullCount{get; private set;}
@@ -29,6 +29,7 @@ public class HexMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         if(instance == null) instance = this;
         CreateMap();
     }

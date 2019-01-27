@@ -49,4 +49,10 @@ public class BeeBehaviour : MonoBehaviour
             moving = true;
         }
     }
+
+    void OnCollisionEnter(Collision other){
+        if (other.gameObject.CompareTag("flower")){
+            
+        }
+    }
 }

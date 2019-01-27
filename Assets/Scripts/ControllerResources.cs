@@ -7,18 +7,18 @@ using UnityEditor.SceneManagement;
 
 public class ControllerResources : MonoBehaviour {
 
-    private int nectares; 
+    private static int nectares; 
     public int Nectares {
         get { return nectares; }
         set { nectares = value; }
     }
 
-    private int beeWorkers;
+    private static int beeWorkers;
     public int BeeWorkers {
         get { return beeWorkers; }
         set { beeWorkers = value; }
     }
-    private int beeSoldiers;
+    private static int beeSoldiers;
     public int BeeSoldiers {
         get { return beeSoldiers; }
         set { beeSoldiers = value; }
@@ -45,11 +45,12 @@ public class ControllerResources : MonoBehaviour {
         hexMap = GameObject.Find("GameObject").GetComponent<HexMap>();
         
 
-        nectares = 500;
-        beeWorkers = 0;
-        beeSoldiers = 0;
+        nectares += 100;
+        // beeWorkers += 0;
+        // beeSoldiers += 0;
 
         setTexts();
+
     }
 
     // Update is called once per frame
