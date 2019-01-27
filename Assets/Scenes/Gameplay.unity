@@ -320,7 +320,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225831249}
-  m_LocalRotation: {x: -0, y: -0, z: -9.313226e-10, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5, y: 4.57, z: -1098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -347,6 +347,7 @@ MonoBehaviour:
   jumpForce: 10
   atackForce: -30
   bees: 0
+  bee: {fileID: 0}
 --- !u!1001 &230545345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,6 +715,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 83181f05d46290d4a9670d7d27223dc9, type: 3}
       propertyPath: m_Name
       value: bee01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 83181f05d46290d4a9670d7d27223dc9, type: 3}
+      propertyPath: m_TagString
+      value: bee
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83181f05d46290d4a9670d7d27223dc9, type: 3}
       propertyPath: m_LocalPosition.x
