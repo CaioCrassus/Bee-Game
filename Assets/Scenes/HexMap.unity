@@ -299,6 +299,8 @@ MonoBehaviour:
   hexFull: {fileID: 301969054680072287, guid: ed167daea2799c24a95f2cf6aad77909, type: 3}
   hexRoyal: {fileID: 4291456710918070226, guid: 1d11a9cb97d9fba45a36d946505811ad,
     type: 3}
+  hexClosed: {fileID: 2204128836141703484, guid: 7736d220bd184fd45b6272798d0c10e3,
+    type: 3}
   hexSelectble: {fileID: 986959519161776178, guid: 21df69afd0520f54ea9581ab93eec5ab,
     type: 3}
   blank: {fileID: 1803601667093834434, guid: 2ccdd429d03f4024f8b8981ab78508ed, type: 3}
