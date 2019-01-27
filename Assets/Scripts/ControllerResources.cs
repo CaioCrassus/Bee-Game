@@ -33,7 +33,11 @@ public class ControllerResources : MonoBehaviour {
     public GameObject panelPurchaseSoldier;
 
     HexMap hexMap;
-    int cellsCount;
+    private int cellsCount;
+    public int CellsCount {
+        get { return cellsCount; }
+        set { cellsCount = value; }
+    }
 
     // Start is called before the first frame update
     void Start()

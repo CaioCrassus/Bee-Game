@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class HexMap : MonoBehaviour
 {
+
+    public static HexMap instance;
+
     public int sizeX, sizeY;
     public GameObject hexEmpty;
     public GameObject hexFull;
@@ -25,6 +28,7 @@ public class HexMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(instance == null) instance = this;
         CreateMap();
     }
 
