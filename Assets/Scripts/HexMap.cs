@@ -8,6 +8,7 @@ public class HexMap : MonoBehaviour
     public GameObject hexEmpty;
     public GameObject hexFull;
     public GameObject hexRoyal;
+    public GameObject hexClosed;
     public GameObject hexSelectble;
     public GameObject blank;
 
@@ -91,11 +92,15 @@ public class HexMap : MonoBehaviour
                 blankCount++;
                 return;
                 case state.empty:
-                if(Random.Range(0,2) == 0){
+                int rand = Random.Range(1,101);
+                if(rand <= 50){
                     hexUnit.unit = Instantiate(hexEmpty, transform);
-                } else
+                } else if (rand <=  85)
                 {
                     hexUnit.unit = Instantiate(hexFull, transform);
+                } else
+                {
+                    hexUnit.unit = Instantiate(hexClosed, transform);
                 }
                 emptyCount++;
                 break;
