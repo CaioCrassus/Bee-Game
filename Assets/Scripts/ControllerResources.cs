@@ -42,10 +42,11 @@ public class ControllerResources : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        hexMap = GameObject.Find("GameObject").GetComponent<HexMap>();
-        
+        hexMap = HexMap.instance;
+        //hexMap = GameObject.Find("GameObject").GetComponent<HexMap>();
 
-        nectares += 100;
+
+        nectares += 1000;
         // beeWorkers += 0;
         // beeSoldiers += 0;
 
