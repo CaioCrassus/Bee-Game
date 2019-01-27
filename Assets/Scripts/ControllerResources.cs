@@ -24,6 +24,7 @@ public class ControllerResources : MonoBehaviour {
         set { beeSoldiers = value; }
     }
 
+    public Text txtCells;
     public Text txtNectares;
     public Text txtBeeWorkers;
     public Text txtBeeSoldiers;
@@ -31,9 +32,15 @@ public class ControllerResources : MonoBehaviour {
     public GameObject panelPurchaseWorker;
     public GameObject panelPurchaseSoldier;
 
+    HexMap hexMap;
+    int cellsCount;
+
     // Start is called before the first frame update
     void Start()
     {
+        hexMap = GameObject.Find("GameObject").GetComponent<HexMap>();
+        
+
         nectares = 500;
         beeWorkers = 0;
         beeSoldiers = 0;
@@ -48,6 +55,8 @@ public class ControllerResources : MonoBehaviour {
     }
 
     private void setTexts() {
+        cellsCount = hexMap.fullCount + hexMap.emptyCount;
+        txtCells.text = cellsCount.ToString();
         txtNectares.text = nectares.ToString();
         txtBeeWorkers.text = beeWorkers.ToString();
         txtBeeSoldiers.text = beeSoldiers.ToString();

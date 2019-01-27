@@ -1239,7 +1239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50
+  m_Text: 
 --- !u!222 &599618669
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2871,6 +2871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6f44a94c7b00644b175063f650cff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txtCells: {fileID: 599618668}
   txtNectares: {fileID: 715047783}
   txtBeeWorkers: {fileID: 1599594502}
   txtBeeSoldiers: {fileID: 948112209}

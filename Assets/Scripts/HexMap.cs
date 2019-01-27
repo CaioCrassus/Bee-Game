@@ -79,7 +79,7 @@ public class HexMap : MonoBehaviour
             }
 
             //change state
-            Debug.Log("chaging:" + hexUnit.unit.name + "From" + hexUnit.state  + "TO" + s);
+            //Debug.Log("chaging:" + hexUnit.unit.name + "From" + hexUnit.state  + "TO" + s);
             Vector3 aux = hexUnit.unit.transform.localPosition;
             //hexUnit.unit.SetActive(false);
             Destroy(map[unitPos].unit);
@@ -156,7 +156,7 @@ public class HexMap : MonoBehaviour
                 break;
             }
         }
-        Debug.Log((blankCount,emptyCount,fullCount,selectedCount,selectableCount).ToString());
+        //Debug.Log((blankCount,emptyCount,fullCount,selectedCount,selectableCount).ToString());
     }
 
     Vector2 GetRandomHexOfState(state s){
