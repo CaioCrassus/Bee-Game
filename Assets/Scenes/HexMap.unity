@@ -296,8 +296,8 @@ MonoBehaviour:
   sizeY: 10
   hexEmpty: {fileID: 4679286350338679474, guid: c67cd6953e7604a41a114863b6d64157,
     type: 3}
-  hexFull: {fileID: 4679286350338679474, guid: e049ddb6df8edbf42a8f480f886cd3a3, type: 3}
-  hexSelected: {fileID: 4679286350338679474, guid: 3df2b6966a549c543976803574e81e62,
+  hexFull: {fileID: 301969054680072287, guid: ed167daea2799c24a95f2cf6aad77909, type: 3}
+  hexRoyal: {fileID: 4291456710918070226, guid: 1d11a9cb97d9fba45a36d946505811ad,
     type: 3}
   hexSelectble: {fileID: 986959519161776178, guid: 21df69afd0520f54ea9581ab93eec5ab,
     type: 3}

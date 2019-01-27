@@ -22,7 +22,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Honey01
-    second: {fileID: 2100000, guid: adc5d632d812cf842a900698e21791a2, type: 2}
+    second: {fileID: 2100000, guid: 97b2afc550628f246b0148fa356e1fc2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

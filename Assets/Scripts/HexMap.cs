@@ -7,7 +7,7 @@ public class HexMap : MonoBehaviour
     public int sizeX, sizeY;
     public GameObject hexEmpty;
     public GameObject hexFull;
-    public GameObject hexSelected;
+    public GameObject hexRoyal;
     public GameObject hexSelectble;
     public GameObject blank;
 
@@ -34,7 +34,7 @@ public class HexMap : MonoBehaviour
             {
                 Hex hex = new Hex();
                 if (i==0&&j==0){
-                    hex.unit = Instantiate(hexEmpty, transform);
+                    hex.unit = Instantiate(hexRoyal, transform);
                     hex.state = state.empty;
                     emptyCount++;
                 }
@@ -70,7 +70,7 @@ public class HexMap : MonoBehaviour
                 case state.full:
                 fullCount--;
                 break;
-                case state.selected:
+                case state.royal:
                 selectedCount--;
                 break;
                 case state.selectble:
@@ -91,15 +91,20 @@ public class HexMap : MonoBehaviour
                 blankCount++;
                 return;
                 case state.empty:
-                hexUnit.unit = Instantiate(hexEmpty, transform);
+                if(Random.Range(0,2) == 0){
+                    hexUnit.unit = Instantiate(hexEmpty, transform);
+                } else
+                {
+                    hexUnit.unit = Instantiate(hexFull, transform);
+                }
                 emptyCount++;
                 break;
                 case state.full:
                 hexUnit.unit = Instantiate(hexFull, transform);
                 fullCount++;
                 break;
-                case state.selected:
-                hexUnit.unit = Instantiate(hexSelected, transform);
+                case state.royal:
+                hexUnit.unit = Instantiate(hexRoyal, transform);
                 selectedCount++;
                 break;
                 case state.selectble:
@@ -120,43 +125,45 @@ public class HexMap : MonoBehaviour
         {
             Vector2 pos = h.Key;
             Vector2 offset;
-            switch(h.Value.state){
-                case state.nothing:
-                break;
-                case state.empty:
-                offset = new Vector2(1,0);
-                if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
-                    ChangeHexState(pos + offset, state.selectble);
+            if (h.Value.state != state.nothing && h.Value.state != state.selectble){
+                    offset = new Vector2(1,0);
+                    if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
+                        ChangeHexState(pos + offset, state.selectble);
 
-                offset = new Vector2(-1,0);
-                if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
-                    ChangeHexState(pos + offset, state.selectble);
-                
-                offset = new Vector2(0,1);
-                if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
-                    ChangeHexState(pos + offset, state.selectble);
-                
-                offset = new Vector2(0,-1);
-                if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
-                    ChangeHexState(pos + offset, state.selectble);
-                
-                offset = new Vector2(1,1);
-                if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
-                    ChangeHexState(pos + offset, state.selectble);
-                
-                offset = new Vector2(1,-1);
-                if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
-                    ChangeHexState(pos + offset, state.selectble);
-                break;
-                case state.full:
-                break;
-                case state.selected:
-                break;
-                case state.selectble:
-                break;
+                    offset = new Vector2(-1,0);
+                    if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
+                        ChangeHexState(pos + offset, state.selectble);
+                    
+                    offset = new Vector2(0,1);
+                    if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
+                        ChangeHexState(pos + offset, state.selectble);
+                    
+                    offset = new Vector2(0,-1);
+                    if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
+                        ChangeHexState(pos + offset, state.selectble);
+                    
+                    offset = new Vector2(1,1);
+                    if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
+                        ChangeHexState(pos + offset, state.selectble);
+                    
+                    offset = new Vector2(1,-1);
+                    if (map.ContainsKey(pos + offset) && map[pos + offset].state == state.nothing)
+                        ChangeHexState(pos + offset, state.selectble);
             }
-        }
+                switch(h.Value.state){
+                    case state.nothing:
+                    break;
+                    case state.empty:
+                    break;
+                    case state.full:
+                    break;
+                    case state.royal:
+                    break;
+                    case state.selectble:
+                    break;
+                }
         //Debug.Log((blankCount,emptyCount,fullCount,selectedCount,selectableCount).ToString());
+        }
     }
 
     Vector2 GetRandomHexOfState(state s){
@@ -170,12 +177,12 @@ public class HexMap : MonoBehaviour
         return pos[Random.Range(0, pos.Count)];
     }
 
-    public state GetHexUnitState(Vector2 pos){
+    state GetHexUnitState(Vector2 pos){
         return map[pos].state;
     }
 }
 
-public enum state{nothing, empty, full, selected, selectble}
+public enum state{nothing, empty, full, royal, selectble}
 struct Hex{
     public state state;
     public GameObject unit;
