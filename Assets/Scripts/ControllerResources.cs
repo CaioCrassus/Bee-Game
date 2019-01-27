@@ -20,56 +20,57 @@ public class ControllerResources : MonoBehaviour {
     }
     private int beeSoldiers;
     public int BeeSoldiers {
-        get { return BeeSoldiers; }
-        set { BeeSoldiers = value; }
+        get { return beeSoldiers; }
+        set { beeSoldiers = value; }
     }
 
     public Text txtNectares;
     public Text txtBeeWorkers;
     public Text txtBeeSoldiers;
 
-    public GameObject panelPurchase;
+    public GameObject panelPurchaseWorker;
+    public GameObject panelPurchaseSoldier;
 
     // Start is called before the first frame update
     void Start()
     {
-        nectares = 100;
+        nectares = 500;
         beeWorkers = 0;
         beeSoldiers = 0;
 
-        txtNectares.text = nectares.ToString();
-        txtBeeWorkers.text = beeWorkers.ToString();
-        txtBeeSoldiers.text = beeSoldiers.ToString();        
+        setTexts();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        setTexts();
     }
 
-    //if bee false: bee = worker else: bee = soldier
-    public void openPanelExchange(bool bee) {
-        panelPurchase.SetActive(true);
-        if (bee) {
-            panelPurchase.GetComponent<Image>().color = new Color(1, 0.92f, 0.016f, 0.5f);
-            panelPurchase.transform.Find("iBeeWorker").gameObject.SetActive(true);
-            panelPurchase.transform.Find("iBeeSoldier").gameObject.SetActive(false);
-            panelPurchase.transform.Find("btnPurchaseWorker").gameObject.SetActive(true);
-            panelPurchase.transform.Find("btnPurchaseSoldier").gameObject.SetActive(false);
+    private void setTexts() {
+        txtNectares.text = nectares.ToString();
+        txtBeeWorkers.text = beeWorkers.ToString();
+        txtBeeSoldiers.text = beeSoldiers.ToString();
+    }
+
+    public void openPanelExchange(bool worker) {
+        if (!worker) {
+            panelPurchaseSoldier.SetActive(true);
+            panelPurchaseWorker.SetActive(false);  
         }
         else {
-            panelPurchase.GetComponent<Image>().color = new Color(1, 0, 0, 0.5f);
-            panelPurchase.transform.Find("iBeeWorker").gameObject.SetActive(false);
-            panelPurchase.transform.Find("iBeeSoldier").gameObject.SetActive(true);
-            panelPurchase.transform.Find("btnPurchaseWorker").gameObject.SetActive(false);
-            panelPurchase.transform.Find("btnPurchaseSoldier").gameObject.SetActive(true);
+            panelPurchaseWorker.SetActive(true);
+            panelPurchaseSoldier.SetActive(false);
         }
-
     }
 
-    public void ClosePanelExchange() {
-        panelPurchase.SetActive(false);
+    public void ClosePanelExchange(bool worker) {
+        if (!worker) {
+            panelPurchaseSoldier.SetActive(false);
+        }
+        else {
+            panelPurchaseWorker.SetActive(false);
+        }
     }
 
     public void startMission(int level) {
