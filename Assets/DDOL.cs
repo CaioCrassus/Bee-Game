@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class LoadMenu : MonoBehaviour
+public class DDOL : MonoBehaviour
 {
+
+    static bool first = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class LoadMenu : MonoBehaviour
         
     }
 
-    public void ToMenu(){
-        SceneManager.LoadScene(1);
+    public void loadMenu(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }

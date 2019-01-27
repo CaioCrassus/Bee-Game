@@ -111,7 +111,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 13.566667
+    m_StopTime: 13.233334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -168,10 +168,11 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 13.566667
-    functionName: 
+  - time: 13.183333
+    functionName: loadMenu
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 1945740309495710589, guid: 5eaddea1e6cb00d44b262c50bce8c25d,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

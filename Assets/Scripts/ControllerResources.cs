@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 
 public class ControllerResources : MonoBehaviour {
@@ -89,6 +89,6 @@ public class ControllerResources : MonoBehaviour {
     }
 
     public void startMission(int level) {
-        EditorSceneManager.LoadScene(level);
+        SceneManager.LoadScene(level);
     }
 }
